@@ -20,38 +20,38 @@ import static org.bukkit.StructureType.*;
 import static org.bukkit.block.Biome.*;
 
 @SuppressWarnings("unused")
-public class DynmapStructuresPlugin extends JavaPlugin implements Listener {
+public class DynmapStructuresPlugin_zh_TW extends JavaPlugin implements Listener {
     private static final StructureType[][] BIOMES = new StructureType[Biome.values().length+1][];
     private static final Map<StructureType, String> LABELS = new HashMap<StructureType, String>() {{
 //        if (StructureType.getStructureTypes().containsKey("ancient_city")) {
 //            put(ANCIENT_CITY, "Ancient City");
 //        }
         if (StructureType.getStructureTypes().containsKey("bastion_remnant")) {
-            put(BASTION_REMNANT, "Bastion Remnant");
+            put(BASTION_REMNANT, "堡壘遺跡");
         }
-        put(BURIED_TREASURE, "Buried Treasure");
-        put(DESERT_PYRAMID, "Desert Pyramid");
-        put(END_CITY, "End City");
-        put(NETHER_FORTRESS, "Nether Fortress");
-        put(IGLOO, "Igloo");
-        put(JUNGLE_PYRAMID, "Jungle Pyramid");
-        put(WOODLAND_MANSION, "Woodland Mansion");
-        put(MINESHAFT, "Mineshaft");
+        put(BURIED_TREASURE, "埋藏的寶藏");
+        put(DESERT_PYRAMID, "沙漠神殿");
+        put(END_CITY, "中界之城");
+        put(NETHER_FORTRESS, "地域堡壘");
+        put(IGLOO, "冰屋");
+        put(JUNGLE_PYRAMID, "叢林神廟");
+        put(WOODLAND_MANSION, "林地府邸");
+        put(MINESHAFT, "礦井");
         if (StructureType.getStructureTypes().containsKey("nether_fossil")) {
             put(NETHER_FOSSIL, "Nether Fossil");
         }
-        put(OCEAN_MONUMENT, "Ocean Monument");
-        put(OCEAN_RUIN, "Ocean Ruins");
+        put(OCEAN_MONUMENT, "深海遺跡");
+        put(OCEAN_RUIN, "海底廢墟");
         if (StructureType.getStructureTypes().containsKey("pillager_outpost")) {
-            put(PILLAGER_OUTPOST, "Pillager Outpost");
+            put(PILLAGER_OUTPOST, "掠奪者前哨站");
         }
         if (StructureType.getStructureTypes().containsKey("ruined_portal")) {
-            put(RUINED_PORTAL, "Ruined Portal");
+            put(RUINED_PORTAL, "廢棄傳送門");
         }
-        put(SHIPWRECK, "Shipwreck");
-        put(STRONGHOLD, "Stronghold");
-        put(SWAMP_HUT, "Swamp Hut");
-        put(VILLAGE, "Village");
+        put(SHIPWRECK, "沉船");
+        put(STRONGHOLD, "要塞遺跡");
+        put(SWAMP_HUT, "沼澤小屋");
+        put(VILLAGE, "村莊");
     }};
     private static final Map<StructureType, Boolean> STRUCTURES = new HashMap<>();
 
