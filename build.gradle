@@ -1,0 +1,41 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+plugins {
+  id 'java'
+  id 'eclipse'
+  id 'idea'
+  id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'com.kovuthehusky'
+version = '2.6.3'
+sourceCompatibility = '1.8'
+
+processResources {
+  filesNotMatching("**/*.png") {
+    filter ReplaceTokens, tokens: [
+      "version": project.property("version")
+    ]
+  }
+}
+
+dependencies {
+  compileOnly 'org.spigotmc:spigot-api:1.21.5-R0.1-SNAPSHOT'
+  implementation 'org.bstats:bstats-bukkit:3.0.3'
+  compileOnly 'org.dynmap:DynmapCoreAPI:1.9.4'
+}
+
+repositories {
+  mavenCentral()
+  maven { url 'https://hub.spigotmc.org/nexus/content/groups/public/' }
+  maven { url 'https://repo.mikeprimm.com/' }
+}
+
+shadowJar {
+  dependencies {
+    include(dependency('org.bstats::'))
+  }
+  relocate 'org.bstats', 'com.kovuthehusky.bstats'
+}
+
+jar.finalizedBy(shadowJar);
